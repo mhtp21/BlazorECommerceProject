@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Brand : BaseEntity
+    public class BaseEntity
     {
-        public string Name { get; set; }
+        public Guid Id { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

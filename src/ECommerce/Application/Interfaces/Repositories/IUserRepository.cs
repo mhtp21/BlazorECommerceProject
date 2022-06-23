@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities;
 
-namespace Domain.Entities
+namespace Application.Interfaces.Repositories
 {
-    public class Brand : BaseEntity
+    public interface IUserRepository : IGenericRepository<User>
     {
-        public string Name { get; set; }
     }
 }
