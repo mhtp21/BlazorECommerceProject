@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MediatR;
 
-namespace Domain.Entities
+namespace Common.Models.RequestModels.Update
 {
-    public class Brand : BaseEntity
+    public class UpdateColorCommand : IRequest<Guid>
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
     }
 }

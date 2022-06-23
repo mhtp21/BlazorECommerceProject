@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities
+namespace Common.Models.Queries
 {
-    public class Brand : BaseEntity
+    public class BrandDetailViewModel
     {
+        public Guid Id { get; set; }
+        public DateTime CreateDate { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
     }
 }
