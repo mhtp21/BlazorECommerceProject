@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using MediatR;
 
-namespace Common.Models.RequestModels.Update
+namespace Common.Models.RequestModels.Delete
 {
-    public class UpdateUserCommand : IRequest<Guid>
+    public class DeleteUserCommand : IRequest<Guid>
     {
         public Guid Id { get; set; }
 
