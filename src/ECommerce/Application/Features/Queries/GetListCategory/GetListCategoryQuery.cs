@@ -10,9 +10,9 @@ using AutoMapper;
 
 namespace Application.Features.Queries.GetListCategory
 {
-    public class GetListCategoryQuery : IRequest<CategoryDetailViewModel>
+    public class GetListCategoryQuery : IRequest<CategoryListModel>
     {
-        public class GetListCategoryueryHandler : IRequestHandler<GetListCategoryQuery, CategoryDetailViewModel>
+        public class GetListCategoryueryHandler : IRequestHandler<GetListCategoryQuery, CategoryListModel>
         {
             private readonly IMapper _mapper;
             private readonly ICategoryRepository _categoryRepository;
@@ -23,11 +23,11 @@ namespace Application.Features.Queries.GetListCategory
                 _categoryRepository = categoryRepository;
             }
 
-            public async Task<CategoryDetailViewModel> Handle(GetListCategoryQuery request, CancellationToken cancellationToken)
+            public async Task<CategoryListModel> Handle(GetListCategoryQuery request, CancellationToken cancellationToken)
             {
                 var categories = await _categoryRepository.GetAll();
-                var categoryListModel = _mapper.Map<CategoryDetailViewModel>(categories);
-                return categoryListModel;
+                var categoryModel = _mapper.Map<CategoryListModel>(categories);
+                return categoryModel;
             }
         }
     }

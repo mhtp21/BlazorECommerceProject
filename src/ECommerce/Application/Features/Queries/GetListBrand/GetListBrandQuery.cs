@@ -10,9 +10,9 @@ using AutoMapper;
 
 namespace Application.Features.Queries.GetListBrand
 {
-    public class GetListBrandQuery : IRequest<BrandDetailViewModel>
+    public class GetListBrandQuery : IRequest<BrandListModel>
     {
-        public class GetListBrandQueryHandler : IRequestHandler<GetListBrandQuery, BrandDetailViewModel>
+        public class GetListBrandQueryHandler : IRequestHandler<GetListBrandQuery, BrandListModel>
         {
             private readonly IMapper _mapper;
             private readonly IBrandRepository _brandRepository;
@@ -23,11 +23,11 @@ namespace Application.Features.Queries.GetListBrand
                 _brandRepository = brandRepository;
             }
 
-            public async Task<BrandDetailViewModel> Handle(GetListBrandQuery request, CancellationToken cancellationToken)
+            public async Task<BrandListModel> Handle(GetListBrandQuery request, CancellationToken cancellationToken)
             {
                 var brands = await _brandRepository.GetAll();
-                var brandListModel = _mapper.Map<BrandDetailViewModel>(brands);
-                return brandListModel;
+                var brandModel = _mapper.Map<BrandListModel>(brands);
+                return brandModel;
             }
         }
     }

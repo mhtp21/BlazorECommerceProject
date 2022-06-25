@@ -10,9 +10,9 @@ using AutoMapper;
 
 namespace Application.Features.Queries.GetListColor
 {
-    public class GetListColorQuery : IRequest<ColorDetailViewModel>
+    public class GetListColorQuery : IRequest<ColorListModel>
     {
-        public class GetListColorQueryHandler : IRequestHandler<GetListColorQuery, ColorDetailViewModel>
+        public class GetListColorQueryHandler : IRequestHandler<GetListColorQuery, ColorListModel>
         {
             private readonly IMapper _mapper;
             private readonly IColorRepository _colorRepository;
@@ -23,11 +23,11 @@ namespace Application.Features.Queries.GetListColor
                 _colorRepository = colorRepository;
             }
 
-            public async Task<ColorDetailViewModel> Handle(GetListColorQuery request, CancellationToken cancellationToken)
+            public async Task<ColorListModel> Handle(GetListColorQuery request, CancellationToken cancellationToken)
             {
                 var colors = await _colorRepository.GetAll();
-                var colorListModel = _mapper.Map<ColorDetailViewModel>(colors);
-                return colorListModel;
+                var colorModel = _mapper.Map<ColorListModel>(colors);
+                return colorModel;
             }
         }
     }
