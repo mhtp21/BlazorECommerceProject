@@ -22,7 +22,10 @@
 	  <ProjectReference Include="..\Domain\Domain.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Features\Queries\" />
+	  <Folder Include="Features\Queries\GetPaymentDetail\" />
+	  <Folder Include="Features\Queries\GetProductDetail\" />
+	  <Folder Include="Features\Queries\GetPurchaseDetail\" />
+	  <Folder Include="Features\Queries\GetUserDetail\" />
 	</ItemGroup>
 
 </Project>
