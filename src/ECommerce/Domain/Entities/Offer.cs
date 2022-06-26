@@ -11,8 +11,7 @@ namespace Domain.Entities
         public Guid UserId { get; set; }
         public Guid ProductId { get; set; }
         public decimal OfferPrice { get; set; }
-        public enum İsApproved { Waiting, Approved, NotApproved }
-
+        public enum İsApproved { Waiting, Approved, NotApproved, PullBack }
         public İsApproved Approved { get; set; }
 
         public virtual Product Product { get; set; }

@@ -9,6 +9,7 @@ using Common.Infrastructure;
 using Common.Infrastructure.Exceptions;
 using Common.Models.Queries;
 using Common.Models.RequestModels;
+using Domain.Entities;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -22,6 +23,7 @@ namespace Application.Features.Commands.User.Login
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
+        private  int count = 0;
 
         public LoginUserCommandHandler(IUserRepository userRepository, IMapper mapper, IConfiguration configuration)
         {
@@ -38,8 +40,16 @@ namespace Application.Features.Commands.User.Login
 
             var pass = PasswordEncryptor.Encrypt(request.Password);
             if (dbUser.Password != pass)
+            {
+                count++;
                 throw new DatabaseValidationException("Password is wrong!");
+            }
 
+            if (count >= 3)
+            {
+                dbUser.Status = false;
+                dbUser.FailLoginCount += 1;
+            }
             var result = _mapper.Map<LoginUserViewModel>(dbUser);
 
             var claims = new Claim[]

@@ -40,7 +40,7 @@ namespace Infrastructure.Persistence.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var connStr = "Data Source=localhost;Initial Catalog=ECommerceDb;Persist Security Info=True;User ID=Hatip;Password=H@tip21";
+                var connStr = "Server=(localdb)\\MSSQLLocalDB;Database=ECommerceDb; Trusted_Connection=True";
                 optionsBuilder.UseSqlServer(connStr, opt =>
                 {
                     opt.EnableRetryOnFailure();

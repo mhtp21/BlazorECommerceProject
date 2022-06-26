@@ -20,7 +20,8 @@ namespace Infrastructure.Persistence.EntityConfigurations
 
             builder.HasOne(i => i.CreateOffer)
                 .WithMany(i => i.Offers)
-                .HasForeignKey(i => i.UserId);
+                .HasForeignKey(i => i.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(i => i.Product)
                 .WithMany(i => i.Offers)
