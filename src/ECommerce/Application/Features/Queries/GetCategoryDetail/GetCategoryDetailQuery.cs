@@ -10,7 +10,7 @@ namespace Application.Features.Queries.GetCategoryDetail
 {
     public class GetCategoryDetailQuery : IRequest<CategoryDetailViewModel>
     {
-        public GetCategoryDetailQuery(Guid categoryId, string categoryName)
+        public GetCategoryDetailQuery(Guid categoryId, string categoryName = null)
         {
             CategoryId = categoryId;
             CategoryName = categoryName;

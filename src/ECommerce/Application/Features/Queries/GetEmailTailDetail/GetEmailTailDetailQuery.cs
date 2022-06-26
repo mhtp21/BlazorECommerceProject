@@ -10,7 +10,7 @@ namespace Application.Features.Queries.GetEmailTailDetail
 {
     public class GetEmailTailDetailQuery : IRequest<EmailTailDetailViewModel>
     {
-        public GetEmailTailDetailQuery(Guid emailTailId, string email)
+        public GetEmailTailDetailQuery(Guid emailTailId, string email = null)
         {
             EmailTailId = emailTailId;
             Email = email;

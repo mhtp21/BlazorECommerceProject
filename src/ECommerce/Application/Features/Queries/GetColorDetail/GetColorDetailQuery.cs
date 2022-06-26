@@ -10,7 +10,7 @@ namespace Application.Features.Queries.GetColorDetail
 {
     public class GetColorDetailQuery : IRequest<ColorDetailViewModel>
     {
-        public GetColorDetailQuery(Guid colorId, string colorName)
+        public GetColorDetailQuery(Guid colorId, string colorName = null)
         {
             ColorId = colorId;
             ColorName = colorName;

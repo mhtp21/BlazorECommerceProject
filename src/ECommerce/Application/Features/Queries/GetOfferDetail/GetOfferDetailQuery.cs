@@ -10,7 +10,7 @@ namespace Application.Features.Queries.GetOfferDetail
 {
     public class GetOfferDetailQuery : IRequest<OfferDetailViewModel>
     {
-        public GetOfferDetailQuery(Guid offerId, Guid productId)
+        public GetOfferDetailQuery(Guid offerId)
         {
             OfferId = offerId;
         }

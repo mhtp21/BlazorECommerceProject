@@ -10,6 +10,12 @@ namespace Application.Features.Queries.GetProductDetail
 {
     public class GetProductDetailQuery : IRequest<ProductDetailViewModel>
     {
+        public GetProductDetailQuery(Guid productId, string productName=null)
+        {
+            ProductId = productId;
+            ProductName = productName;
+        }
+
         public Guid ProductId { get; set; }
         public string ProductName { get; set; }
     }

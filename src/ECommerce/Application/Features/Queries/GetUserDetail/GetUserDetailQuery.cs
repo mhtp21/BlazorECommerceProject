@@ -15,7 +15,7 @@ namespace Application.Features.Queries.GetUserDetail
 
         public string Email { get; set; }
 
-        public GetUserDetailQuery(Guid userId, string email)
+        public GetUserDetailQuery(Guid userId, string email=null)
         {
             UserId = userId;
             Email = email;

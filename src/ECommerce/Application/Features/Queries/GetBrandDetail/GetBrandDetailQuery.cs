@@ -10,7 +10,7 @@ namespace Application.Features.Queries.GetBrandDetail
 {
     public class GetBrandDetailQuery : IRequest<BrandDetailViewModel>
     {
-        public GetBrandDetailQuery(Guid brandId, string brandName)
+        public GetBrandDetailQuery(Guid brandId, string brandName = null)
         {
             BrandId = brandId;
             BrandName = brandName;
