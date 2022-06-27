@@ -1,5 +1,6 @@
 ﻿using Application.Features.Commands.User;
 using Application.Features.Queries.GetUserDetail;
+using Application.Features.Queries.GetListUserAccountDetail;
 using Common.Models.RequestModels;
 using Common.Models.RequestModels.Update;
 using MediatR;
@@ -34,6 +35,14 @@ namespace GiveOfferAPI.Controllers
         {
             var user = await mediator.Send(new GetUserDetailQuery(Guid.Empty, userName));
 
+            return Ok(user);
+        }
+
+        [HttpGet]
+        [Route("User/{id}")]
+        public async Task<IActionResult> GetByAccountDetail(Guid userId)
+        {
+            var user = await mediator.Send(new GetUserAccountQuery(userId));
             return Ok(user);
         }
 
