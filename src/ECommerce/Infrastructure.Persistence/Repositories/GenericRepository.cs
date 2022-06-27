@@ -239,40 +239,6 @@ namespace Infrastructure.Persistence.Repositories
             dbContext.RemoveRange(entity.Where(predicate));
             return dbContext.SaveChangesAsync();
         }
-
-        public virtual Task BulkDelete(IEnumerable<TEntity> entities)
-        {
-            if (entities != null && !entities.Any())
-                return Task.CompletedTask;
-
-            entity.RemoveRange(entities);
-            return dbContext.SaveChangesAsync();
-        }
-
-        public virtual Task BulkUpdate(IEnumerable<TEntity> entities)
-        {
-            if (entities != null && !entities.Any())
-                return Task.CompletedTask;
-
-            foreach (var entityItem in entities)
-            {
-                entity.Update(entityItem);
-            }
-
-            return dbContext.SaveChangesAsync();
-        }
-
-        public virtual async Task BulkAdd(IEnumerable<TEntity> entities)
-        {
-            if (entities != null && !entities.Any())
-                await Task.CompletedTask;
-
-            await entity.AddRangeAsync(entities);
-
-            await dbContext.SaveChangesAsync();
-        }
-
-
         public Task<int> SaveChangesAsync()
         {
             return dbContext.SaveChangesAsync();

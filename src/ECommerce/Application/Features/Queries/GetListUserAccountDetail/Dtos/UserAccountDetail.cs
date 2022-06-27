@@ -13,11 +13,11 @@ namespace Application.Features.Queries.GetListUserAccountDetail.Dtos
 
         public DateTime CreateDate { get; set; }
 
-        public string FirstName { get; set; }
+        public string? FirstName { get; set; }
 
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
 
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         public virtual List<Purchase>? Purchases { get; set;}
         public virtual List<Offer>? GivenOffer { get; set; }

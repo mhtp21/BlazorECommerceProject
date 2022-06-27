@@ -47,12 +47,5 @@ namespace Application.Interfaces.Repositories
 
         IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> predicate, bool noTracking = true, params Expression<Func<TEntity, object>>[] includes);
 
-
-
-        Task BulkDeleteById(IEnumerable<Guid> ids);
-        Task BulkDelete(Expression<Func<TEntity, bool>> predicate);
-        Task BulkDelete(IEnumerable<TEntity> entities);
-        Task BulkUpdate(IEnumerable<TEntity> entities);
-        Task BulkAdd(IEnumerable<TEntity> entities);
     }
 }
