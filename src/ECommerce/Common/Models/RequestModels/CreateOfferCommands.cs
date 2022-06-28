@@ -15,17 +15,19 @@ namespace Common.Models.RequestModels
         public enum İsApproved { Waiting, Approved, NotApproved }
 
         public İsApproved Approved { get; set; }
+        public bool Offerwithdrawal { get; set; }
 
         public CreateOfferCommands()
         {
 
         }
-        public CreateOfferCommands(Guid userId,Guid productId,decimal offerPrice,İsApproved isApproved)
+        public CreateOfferCommands(Guid userId,Guid productId, decimal offerPrice, İsApproved isApproved, bool offerwithdrawal)
         {
             UserId = userId;
             ProductId = productId;
             OfferPrice = offerPrice;
             Approved = isApproved;
+            Offerwithdrawal = offerwithdrawal;
         }
     }
 }
