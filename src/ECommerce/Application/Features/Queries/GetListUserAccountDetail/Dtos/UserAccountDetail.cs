@@ -19,8 +19,8 @@ namespace Application.Features.Queries.GetListUserAccountDetail.Dtos
 
         public string? Email { get; set; }
 
-        public virtual List<Purchase>? Purchases { get; set;}
-        public virtual List<Offer>? GivenOffer { get; set; }
-        public virtual List<Offer>? TakingOffer { get; set; }
+        public virtual ICollection<Purchase>? Purchases { get; set;}
+        public virtual ICollection<Offer>? GivenOffer { get; set; }
+        public virtual ICollection<Offer>? TakingOffer { get; set; }
     }
 }
