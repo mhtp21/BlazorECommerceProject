@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Persistence"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "src\ECommerce\Common\Common.csproj", "{86BE6E0B-523A-4887-BE29-2A12C22066E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiveOfferAPI", "src\ECommerce\GiveOfferAPI\GiveOfferAPI.csproj", "{2ED70EBC-B4D4-45AF-80FF-60D81E4E95E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiveOfferAPI", "src\ECommerce\GiveOfferAPI\GiveOfferAPI.csproj", "{2ED70EBC-B4D4-45AF-80FF-60D81E4E95E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorECommerce", "src\ECommerce\BlazorECommerce\BlazorECommerce.csproj", "{B998D6D8-F12F-4287-91DF-5403C094CE56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{2ED70EBC-B4D4-45AF-80FF-60D81E4E95E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ED70EBC-B4D4-45AF-80FF-60D81E4E95E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ED70EBC-B4D4-45AF-80FF-60D81E4E95E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B998D6D8-F12F-4287-91DF-5403C094CE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B998D6D8-F12F-4287-91DF-5403C094CE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B998D6D8-F12F-4287-91DF-5403C094CE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B998D6D8-F12F-4287-91DF-5403C094CE56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 		{4236BBA4-F3EB-472A-B559-080E7DAE140E} = {242F970D-3BF0-4B00-914B-1A97E4F2F37B}
 		{86BE6E0B-523A-4887-BE29-2A12C22066E8} = {242F970D-3BF0-4B00-914B-1A97E4F2F37B}
 		{2ED70EBC-B4D4-45AF-80FF-60D81E4E95E2} = {242F970D-3BF0-4B00-914B-1A97E4F2F37B}
+		{B998D6D8-F12F-4287-91DF-5403C094CE56} = {242F970D-3BF0-4B00-914B-1A97E4F2F37B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9370D870-86AE-4D08-B67A-168A14ECCBDA}
