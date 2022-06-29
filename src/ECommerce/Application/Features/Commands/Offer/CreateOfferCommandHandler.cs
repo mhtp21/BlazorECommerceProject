@@ -10,7 +10,7 @@ using MediatR;
 
 namespace Application.Features.Commands.Offer
 {
-    public class CreateOfferCommandHandler : IRequestHandler<CreateOfferCommands,Guid>
+    public class CreateOfferCommandHandler : IRequestHandler<CreateOfferCommand,Guid>
     {
         private readonly IMapper _mapper;
         private readonly IOfferRepository _offerRepository;
@@ -21,7 +21,7 @@ namespace Application.Features.Commands.Offer
             _offerRepository = offerRepository;
         }
 
-        public async Task<Guid> Handle(CreateOfferCommands request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(CreateOfferCommand request, CancellationToken cancellationToken)
         {
             var dbOffer = _mapper.Map<Domain.Entities.Offer>(request);
             await _offerRepository.AddAsync(dbOffer);

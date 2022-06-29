@@ -39,24 +39,24 @@ namespace GiveOfferAPI.Controllers
 
         [HttpPost]
         [Route("CreateEmailTail")]
-        public async Task<IActionResult> Create([FromBody] CreateEmailTailCommand command)
+        public async Task<IActionResult> CreateEmail([FromBody] CreateEmailTailCommand command)
         {
             var guid = await mediator.Send(command);
 
             return Ok(guid);
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("Delete")]
-        public async Task<IActionResult> DeleteEmailTail(DeleteEmailTailCommand command)
+        public async Task<IActionResult> DeleteEmail([FromBody] DeleteEmailTailCommand command)
         {
-            var guid = await mediator.Send(command);
-            return Ok(guid);
+            var result = await mediator.Send(command);
+            return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Update")]
-        public async Task<IActionResult> UpdateEmailTail([FromBody] UpdateEmailTailCommand command)
+        public async Task<IActionResult> UpdateEmail([FromBody] UpdateEmailTailCommand command)
         {
             var guid = await mediator.Send(command);
 

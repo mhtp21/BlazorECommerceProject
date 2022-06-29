@@ -14,9 +14,7 @@ namespace Common.Models.RequestModels.Update
         public Guid ProductId { get; set; }
         public decimal OfferPrice { get; set; }
         public enum İsApproved { Waiting, Approved, NotApproved }
-
         public İsApproved Approved { get; set; }
-
         public bool Offerwithdrawal { get; set; }
     }
 }

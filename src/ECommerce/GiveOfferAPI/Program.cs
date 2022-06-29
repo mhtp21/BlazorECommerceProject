@@ -16,6 +16,7 @@ builder.Services.AddDbContext<HangfireDbContext>(item => item.UseSqlServer(build
 builder.Services.AddHangfire(c => c.UseSqlServerStorage(builder.Configuration.GetConnectionString("myconn")));
 GlobalConfiguration.Configuration.UseSqlServerStorage(builder.Configuration.GetConnectionString("myconn")).
     WithJobExpirationTimeout(TimeSpan.FromDays(7));
+
 builder.Services
     .AddControllers(opt => opt.Filters.Add<ValidateModelStateFilter>())
     .AddJsonOptions(opt =>
@@ -28,7 +29,10 @@ builder.Services
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.CustomSchemaIds(type => type.ToString());
+});
 
 builder.Services.AddApplicationRegistration();
 builder.Services.AddInfrastructureRegistration(builder.Configuration);

@@ -13,16 +13,5 @@ namespace Common.Models.RequestModels
         public enum Status { Successfull, Unsuccessfull, Process }
         public Status StatusSetting { get; set; }
         public int TryCount { get; set; }
-
-        public CreateEmailTailCommand()
-        {
-
-        }
-        public CreateEmailTailCommand(string email,Status status,int trycount)
-        {
-            Email = email;
-            StatusSetting = status;
-            TryCount = trycount;
-        }
     }
 }

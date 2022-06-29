@@ -37,15 +37,15 @@ namespace GiveOfferAPI.Controllers
             return Ok(guid);
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("Delete")]
-        public async Task<IActionResult> DeletePayment(DeletePaymentCommand command)
+        public async Task<IActionResult> DeletePayment([FromBody] DeletePaymentCommand command)
         {
-            var guid = await mediator.Send(command);
-            return Ok(guid);
+            var result = await mediator.Send(command);
+            return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> UpdatePayment([FromBody] UpdatePaymentCommand command)
         {

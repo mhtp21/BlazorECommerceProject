@@ -15,19 +15,5 @@ namespace Common.Models.RequestModels
         public string Password { get; set; }
         public bool Status { get; set; }
         public int FailLoginCount { get; set; }
-        public CreateUserCommand()
-        {
-
-        }
-
-        public CreateUserCommand(string name,string lastname,string email,string password,bool status,int faillcount)
-        {
-            FirstName = name;
-            LastName = lastname;
-            Email = email;
-            Password = password;
-            Status = status;
-            FailLoginCount = faillcount;
-        }
     }
 }

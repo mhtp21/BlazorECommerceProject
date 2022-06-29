@@ -31,7 +31,7 @@ namespace Infrastructure.Persistence.Extensions
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IBrandRepository, BrandRepository>();
             services.AddScoped<IColorRepository, ColorRepository>();
-            services.AddScoped<OfferRepository, OfferRepository>();
+            services.AddScoped<IOfferRepository, OfferRepository>();
             services.AddScoped<IPurchaseRepository, PurchaseRepository>();
             services.AddScoped<IPaymentRepository, PaymentRepository>();
 

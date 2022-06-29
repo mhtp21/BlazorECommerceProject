@@ -48,6 +48,7 @@ namespace Application.HangfireMail
                 {
                     smtp.Send(msg);
                     item.StatusSetting = Domain.Entities.EmailTail.Status.Successfull;
+                    emailTailRepository.Update(item);
                 }
                 catch (Exception)
                 {
@@ -55,6 +56,7 @@ namespace Application.HangfireMail
                     if(item.TryCount >= 5)
                     {
                         item.StatusSetting = Domain.Entities.EmailTail.Status.Unsuccessfull;
+                        emailTailRepository.Update(item);
                     }
                     throw;
                 }

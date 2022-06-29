@@ -37,7 +37,8 @@ namespace GiveOfferAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] GetListCategoryQuery query)
+        [Route("CategoryAllList")]
+        public async Task<IActionResult> GetAll([FromQuery]GetListCategoryQuery query)
         {
             var category = await mediator.Send(query);
             return Ok(category);
@@ -61,15 +62,15 @@ namespace GiveOfferAPI.Controllers
             return Ok(guid);
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("Delete")]
-        public async Task<IActionResult> DeleteCategory(DeleteCategoryCommand command)
+        public async Task<IActionResult> DeleteCategory([FromBody] DeleteCategoryCommand command)
         {
-            var guid = await mediator.Send(command);
-            return Ok(guid);
+            var result = await mediator.Send(command);
+            return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> UpdateCategory([FromBody] UpdateCategoryCommand command)
         {

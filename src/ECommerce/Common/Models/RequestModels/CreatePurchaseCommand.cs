@@ -13,15 +13,5 @@ namespace Common.Models.RequestModels
         public Guid ProductId { get; set; }
         public decimal Price { get; set; }
 
-        public CreatePurchaseCommand()
-        {
-
-        }
-        public CreatePurchaseCommand(Guid userId,Guid productId,decimal price)
-        {
-            UserId = userId;
-            ProductId = productId;
-            Price = price;
-        }
     }
 }

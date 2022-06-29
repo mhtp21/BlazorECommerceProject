@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using MediatR;
 
-namespace Common.Models.RequestModels
+namespace Common.Models.RequestModels.Delete
 {
-    public class CreateColorCommand :IRequest<Guid>
+    public class DeleteColorModel
     {
-        public string Name { get; set; }
+        public Guid Id { get; set; }
     }
 }

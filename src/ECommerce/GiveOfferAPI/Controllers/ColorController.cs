@@ -54,15 +54,15 @@ namespace GiveOfferAPI.Controllers
             return Ok(guid);
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("Delete")]
-        public async Task<IActionResult> DeleteColor(DeleteColorCommand command)
+        public async Task<IActionResult> DeleteColor([FromBody] DeleteColorCommand command)
         {
-            var guid = await mediator.Send(command);
-            return Ok(guid);
+            var result = await mediator.Send(command);
+            return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> UpdateColor([FromBody] UpdateColorCommand command)
         {

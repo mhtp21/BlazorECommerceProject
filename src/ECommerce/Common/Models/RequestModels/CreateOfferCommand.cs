@@ -7,27 +7,13 @@ using MediatR;
 
 namespace Common.Models.RequestModels
 {
-    public class CreateOfferCommands : IRequest<Guid>
+    public class CreateOfferCommand : IRequest<Guid>
     {
         public Guid UserId { get; set; }
         public Guid ProductId { get; set; }
         public decimal OfferPrice { get; set; }
         public enum İsApproved { Waiting, Approved, NotApproved }
-
         public İsApproved Approved { get; set; }
         public bool Offerwithdrawal { get; set; }
-
-        public CreateOfferCommands()
-        {
-
-        }
-        public CreateOfferCommands(Guid userId,Guid productId, decimal offerPrice, İsApproved isApproved, bool offerwithdrawal)
-        {
-            UserId = userId;
-            ProductId = productId;
-            OfferPrice = offerPrice;
-            Approved = isApproved;
-            Offerwithdrawal = offerwithdrawal;
-        }
     }
 }

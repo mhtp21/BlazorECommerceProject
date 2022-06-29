@@ -10,13 +10,5 @@ namespace Common.Models.RequestModels
     public class CreateBrandCommand : IRequest<Guid>
     {
         public string Name { get; set; }
-        public CreateBrandCommand()
-        {
-
-        }
-        public CreateBrandCommand(string name)
-        {
-            Name = name;
-        }
     }
 }

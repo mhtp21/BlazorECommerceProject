@@ -59,14 +59,23 @@ namespace GiveOfferAPI.Controllers
         [HttpPost]
         [Authorize]
         [Route("CreateUser")]
-        public async Task<IActionResult> Create([FromBody] CreateUserCommand command)
+        public async Task<IActionResult> CreateUser([FromBody] CreateUserCommand command)
         {
             var guid = await mediator.Send(command);
 
             return Ok(guid);
         }
 
-        [HttpPost]
+        [HttpDelete]
+        [Authorize]
+        [Route("Delete")]
+        public async Task<IActionResult> DeleteUser([FromBody] DeleteUserCommand command)
+        {
+            var result = await mediator.Send(command);
+            return Ok(result);
+        } 
+
+        [HttpPut]
         [Route("Update")]
         [Authorize]
         public async Task<IActionResult> UpdateUser([FromBody] UpdateUserCommand command)

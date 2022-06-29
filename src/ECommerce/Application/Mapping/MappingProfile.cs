@@ -8,6 +8,7 @@ using Domain.Entities;
 using Common.Models.Queries;
 using Common.Models.RequestModels;
 using Common.Models.RequestModels.Update;
+using Common.Models.RequestModels.Delete;
 
 namespace Application.Mapping
 {
@@ -24,7 +25,7 @@ namespace Application.Mapping
             CreateMap<Product, ProductDetailViewModel>().ReverseMap();
 
             CreateMap<CreateBrandCommand, Brand>();
-            CreateMap<UpdateBrandCommand, BrandDetailViewModel>();
+            CreateMap<UpdateBrandCommand, Brand>();
             CreateMap<Brand, BrandDetailViewModel>().ReverseMap();
 
             CreateMap<CreateCategoryCommand, Category>();
@@ -39,7 +40,7 @@ namespace Application.Mapping
             CreateMap<UpdateEmailTailCommand,EmailTail>();
             CreateMap<EmailTail, EmailTailDetailViewModel>().ReverseMap();
 
-            CreateMap<CreateOfferCommands, Offer>();
+            CreateMap<CreateOfferCommand, Offer>();
             CreateMap<UpdateOfferCommand, Offer>();
             CreateMap<Offer, OfferDetailViewModel>().ReverseMap();
 

@@ -29,22 +29,22 @@ namespace GiveOfferAPI.Controllers
 
         [HttpPost]
         [Route("CreateOffer")]
-        public async Task<IActionResult> Create([FromBody] CreateOfferCommands command)
+        public async Task<IActionResult> Create([FromBody] CreateOfferCommand command)
         {
             var guid = await mediator.Send(command);
 
             return Ok(guid);
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("Delete")]
-        public async Task<IActionResult> DeleteOffer(DeleteOfferCommand command)
+        public async Task<IActionResult> DeleteOffer([FromBody] DeleteOfferCommand command)
         {
-            var guid = await mediator.Send(command);
-            return Ok(guid);
+            var result = await mediator.Send(command);
+            return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> UpdateOffer([FromBody] UpdateOfferCommand command)
         {

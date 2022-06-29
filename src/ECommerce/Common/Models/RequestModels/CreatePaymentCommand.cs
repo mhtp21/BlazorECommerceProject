@@ -16,18 +16,5 @@ namespace Common.Models.RequestModels
         public string ExpirationDate { get; set; }
         public decimal MoneyInTheCard { get; set; }
 
-        public CreatePaymentCommand()
-        {
-
-        }
-        public CreatePaymentCommand(Guid pusrchaseId,string nameCard,string cardNumber,string cardCvv,string expirationDate,decimal moneyinCard)
-        {
-            PurchaseId = pusrchaseId;
-            NameOnTheCard = nameCard;
-            CardNumber = cardNumber;
-            CardCvv = cardCvv;
-            ExpirationDate = expirationDate;
-            MoneyInTheCard = moneyinCard;
-        }
     }
 }
